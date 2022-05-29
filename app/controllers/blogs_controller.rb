@@ -1,21 +1,22 @@
 class BlogsController < ApplicationController
+  # protect_from_forgery
   def index
     @blog = Blog.all
     
   end
 
   def new
-    byebug
     @blog = Blog.new
 
   end
 
   def create
-    @blog = Blog.create(get_params)
+    @blog = current_user.blogs.build(get_params)
+    @blog.save
+    byebug
     redirect_to blogs_path
   end
 
-  byebug
   def confirm
     # @blog = Blog.new(get_params)
     # @blog.user_id = current_user.id
