@@ -1,0 +1,17 @@
+<%= form_with(model: @blog, local: true) do |form| %>
+  <%= form.label :title %>
+  <%= @blog.title%>
+  <%= form.hidden_field :title %>
+
+  <%= form.label :content %>
+  <%= @blog.content%>
+  <%= form.hidden_field :content %>
+
+  <%# <%= form.label :user_id %> %>
+  <%# <%= @blog.user_id %> %>
+  <%# <%= form.hidden_field :user_id %> %>
+
+
+
+  <%= form.submit '送信' %>
+<% end %>

@@ -1,3 +1,7 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+<% @blog.each do |blog| %>
+<%# <%= blog.label :title %> %>
+<% end %>
+<%= link_to 'ブログを作成する', new_blog_path %>
